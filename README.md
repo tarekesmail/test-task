@@ -18,7 +18,8 @@ The helm chart can be installed by
     helm install app ./helm
 
 **Terraform EC2** 
-As requested i created ec2 machine with 20G root volume and 100G external ebs volume, i selected the machine type c6g because in case of we will perform some complex equations we will need CPU optimized machines, and i selected it Graviton because this is new ec2 generation with optimized performance and cost. this benchmark results talking more about the difference https://www.percona.com/blog/comparing-graviton-performance-to-arm-and-intel-for-mysql/
+As requested i created ec2 machine with 20G root volume and 100G external ebs volume, i selected the machine type c6g because in case of we will perform some complex equations we will need CPU optimized machines, and i selected it Graviton because this is new ec2 generation with optimized performance and cost. this benchmark results talking more about the difference https://www.percona.com/blog/comparing-graviton-performance-to-arm-and-intel-for-mysql/ also i used the gp3 volumes because it's better performance than gp2
+![image](https://user-images.githubusercontent.com/538982/160758548-53fd3a9e-ea24-45f1-912c-5f5e435854c8.png)
 
 to use this terraform files you have to specify the vpc and subnet which you will use it to create this ec2
 
