@@ -1,5 +1,5 @@
 **NodeJS and MongoDB App**
-1. docker-compose file with docker file created in .docker directory, the docker-compose bootstrapping two containers the first on the nodejs application by building Dockerfile and the second the mongodb container, this docker-compose file should used for development only.
+1. docker-compose file with docker file created in repo root directory, the docker-compose bootstrapping two containers the first on the nodejs application by building Dockerfile and the second the mongodb container, this docker-compose file should used for development only.
 2. created Jenkins Pipeline as requested with Jenkinsfile name in the repo. 
 3. the jenkinsfile bootstrap mongodb container and building the nodejs application and setup the connection between both containers to run the tests you can find it in repo root.
 4. created kubernetes deployment, service, ingress for the nodejs application, and deployment, service for mongodb container. and the i used secrets for mongodb and nodejs application to connect the nodejs app to mongodb.
