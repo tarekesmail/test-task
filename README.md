@@ -1,7 +1,7 @@
 **NodeJS and MongoDB App**
 1. docker-compose file with docker file created in repo root directory, the docker-compose bootstrapping two containers the first on the nodejs application by building Dockerfile and the second the mongodb container, this docker-compose file should used for development only.
 2. created Jenkins Pipeline as requested with Jenkinsfile name in the repo. 
-3. the jenkinsfile bootstrap mongodb container and building the nodejs application and setup the connection between both containers to run the tests you can find it in repo root.
+3. the jenkinsfile bootstrap mongodb container and building the nodejs application and setup the connection between both containers to run the tests you can find it in repo root. also screenshot from the pipeline logs https://github.com/tarekesmail/test-task/blob/main/Nodeapp-testing-65-Console-Jenkins-.png
 4. created kubernetes deployment, service, ingress for the nodejs application, and deployment, service for mongodb container. and the i used secrets for mongodb and nodejs application to connect the nodejs app to mongodb.
 5. created helm chart with mongodb dependency and nodejs application with ingress. you can for sure enable and disable the mongodb chart dependency. 
 6. i added some changes to nodejs application to allow using separated values for MongoDB host, user, password, db, port to be more secure to use secrets in kubernetes you can review it by checking this commit https://github.com/tarekesmail/node-express-realworld-example-app/commit/42a2a77555e91d7dd28464f5122f4e2ebc9dd6e9
