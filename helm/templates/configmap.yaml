@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-config
+data:
+  MONGO_HOSTNAME: "{{ .Values.mongodb.fullnameOverride }}"
+  MONGO_PORT: "{{ .Values.mongodb.port }}"
+  MONGO_DB: "{{ .Values.mongodb.auth.database }}"
+  MONGO_USERNAME: "{{ .Values.mongodb.auth.username }}"
+  NODE_ENV: "{{ .Values.environment }}"

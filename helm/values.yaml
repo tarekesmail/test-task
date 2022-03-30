@@ -1,0 +1,22 @@
+replicaCount: 1
+domainName: nodejstestapp.com
+environment: production
+image:
+  repository: tarekesmail/nodejs-test-app
+  tag: "latest"
+  imagePullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 3000
+
+mongodb:
+  fullnameOverride: mongodb
+  port: 27017
+  service.type: NodePort
+  persistence:
+    enabled: false
+  auth:
+    enabled: true
+    username: root
+    database: conduit

@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nodejs-app
+  name: nodejs-app
+spec:
+  replicas: {{.Values.replicaCount}}
+  selector:
+    matchLabels:
+      app: nodejs-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nodejs-app
+    spec:
+      containers:
+      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: nodejs-app
+        resources: {}
+        env:
+        - name: NODE_ENV
+          valueFrom:
+            configMapKeyRef:
+              key: NODE_ENV
+              name: {{ .Release.Name }}-config
+        - name: SECRET
+          valueFrom:
+            secretKeyRef:
+              key: SECRET
+              name: {{ .Release.Name }}-secrets
+        - name: MONGO_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              key: MONGO_USERNAME
+              name: {{ .Release.Name }}-config
+        - name: MONGO_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: {{ .Values.mongodb.fullnameOverride }}-root-password
+              name: {{ .Values.mongodb.fullnameOverride }}
+        - name: MONGO_HOSTNAME
+          valueFrom:
+            configMapKeyRef:
+              key: MONGO_HOSTNAME
+              name: {{ .Release.Name }}-config
+        - name: MONGO_PORT
+          valueFrom:
+            configMapKeyRef:
+              key: MONGO_PORT
+              name: {{ .Release.Name }}-config
+        - name: MONGO_DB
+          valueFrom:
+            configMapKeyRef:
+              key: MONGO_DB
+              name: {{ .Release.Name }}-config
