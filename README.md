@@ -22,6 +22,7 @@ As requested i created ec2 machine with 20G root volume and 100G external ebs vo
 
 ![image](https://user-images.githubusercontent.com/538982/160758672-28833ff6-aac4-4d54-91e3-eb5837cbd964.png)
 
+
 to use this terraform files you have to specify the vpc and subnet which you will use it to create this ec2
 
 **Enhancements** 
