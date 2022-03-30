@@ -11,6 +11,7 @@ service:
   port: 3000
 
 mongodb:
+  enabled: false
   fullnameOverride: mongodb
   port: 27017
   service.type: NodePort
